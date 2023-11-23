@@ -6,10 +6,16 @@ import Home from './Home'
 
 function App() {
 
+  const [openSidebarToogle, setOpenSidebarToogle] = useState(false)
+
+  const OpenSideBar = () => {
+    setOpenSidebarToogle(!openSidebarToogle)
+  }
+
   return (
    <div className='grid-container'>
-      <Header />
-      <Sidebar />
+      <Header OpenSidebar={OpenSideBar}/>
+      <Sidebar openSidebarToogle={openSidebarToogle} OpenSidebar={OpenSideBar} />
       <Home />
    </div>
   )
